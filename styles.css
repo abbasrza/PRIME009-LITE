@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(45deg, #1a1a1a, #222);
+}
+
+nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1.05em;
+  padding: 6px 14px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+nav a:hover {
+  border-color: #eee;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 740px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #1b1b1b;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.container p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tool {
+  margin-bottom: 25px;
+  padding: 18px;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.tool:hover {
+  background-color: #3a3a3a;
+}
+
+.tool h3 {
+  margin-bottom: 8px;
+}
+.tool p {
+  margin-bottom: 12px;
+}
+
+.tool .download {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0073e6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.tool .download:hover {
+  background-color: #005bb5;
+}
+
+footer {
+  text-align: center;
+  padding: 14px;
+  background-color: #1a1a1a;
+  font-size: 0.9em;
+  margin-top: 40px;
+}
+
+/* 3D Glowing Text Styles */
+.logo-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  height: 150px;
+}
+
+.logo-3d h1 {
+  position: absolute;
+  width: 100%;
+  font: 900 4em 'Concert One', sans-serif;
+  text-transform: uppercase;
+  color: #111;
+  animation: glow 8s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%,100% { text-shadow: 0 0 20px #f00; }
+  25% { text-shadow: 0 0 20px #fa0; }
+  50% { text-shadow: 0 0 20px #0f0; }
+  75% { text-shadow: 0 0 20px #0ff; }
+}
+
+.logo-3d h1:nth-child(1) { transform: translateZ(1px); }
+.logo-3d h1:nth-child(2) { transform: translateZ(3px); }
+.logo-3d h1:nth-child(3) { transform: translateZ(6px); }
+.logo-3d h1:nth-child(4) { transform: translateZ(10px); }
+.logo-3d h1:nth-child(5) { transform: translateZ(15px); }
+.logo-3d h1:nth-child(6) { transform: translateZ(20px); }
+.logo-3d h1:nth-child(7) { transform: translateZ(26px); }
+.logo-3d h1:nth-child(8) { transform: translateZ(33px); }
+.logo-3d h1:nth-child(9) { transform: translateZ(41px); }
+.logo-3d h1:nth-child(10){ transform: translateZ(50px); }
+/* PS5-style 3D Hover Effect */
+nav a,
+.tool {
+  transform: perspective(600px) translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+/* NAV Hover Effect */
+nav a:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+  border-color: #00f0ff;
+}
+
+/* TOOL Hover Effect (Cards) */
+.tool:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(0, 255, 255, 0.2),
+              0 0 12px rgba(0, 255, 255, 0.3);
+  background-color: #313131;
+}
+
+
+.icon-3d {
+  font-size: 40px;
+  color: #00ffff;
+  margin-bottom: 10px;
+  transition: transform 0.4s, text-shadow 0.4s;
+  text-align: center;
+}
+.tool:hover .icon-3d {
+  transform: scale(1.4) rotate(10deg);
+  text-shadow: 0 0 8px #00f0ff, 0 0 15px #00f0ff;
+}
+.tool {
+  text-align: center;
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 2px);
+  background-size: 50px 50px;
+  animation: moveBackground 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 2px);
+  background-size: 50px 50px;
+  animation: moveBackground 30s linear infinite;
+  z-index: -1;
+}
+@keyframes moveBackground {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
